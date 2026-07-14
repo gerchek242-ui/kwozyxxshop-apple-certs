@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple Developer Certificate — Подпись приложений на iPhone</title>
+  <meta name="description" content="Купите Apple Developer Certificate для подписи приложений на iPhone. Быстрая выдача, гарантия 1 месяц, стабильная работа. Цена от 529 ₽." />
+  <meta property="og:title" content="Apple Developer Certificate" />
+  <meta property="og:description" content="Подписывайте приложения на iPhone быстро, безопасно и без ограничений. Цена от 529 ₽." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kwozyxxshop21.t.me" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23000'/><path d='M50 18c-3.8 0-6.9 1.3-9.3 3.9-2.3 2.5-3.5 6-3.6 10.4H31c.2-6.3 2-11.2 5.6-14.6C40.1 14.2 44.6 12.4 50 12.4c5.4 0 9.9 1.8 13.4 5.3 3.6 3.4 5.4 8.3 5.6 14.6h-6.1c-.1-4.4-1.3-7.9-3.6-10.4C56.9 19.3 53.8 18 50 18zM35 38h30v36H35V38z' fill='white' opacity='.15'/><text x='50' y='72' text-anchor='middle' font-size='42' font-family='system-ui' font-weight='700' fill='white'>A</text></svg>" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000;
+      --bg2: #080808;
+      --surface: rgba(255,255,255,0.04);
+      --surface2: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.1);
+      --border2: rgba(255,255,255,0.18);
+      --text: #f5f5f7;
+      --text2: #a1a1a6;
+      --text3: #6e6e73;
+      --accent: #2997ff;
+      --accent2: #0071e3;
+      --accent3: #34aadc;
+      --glow: rgba(41,151,255,0.3);
+      --glow2: rgba(41,151,255,0.15);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── PRELOADER ───────────────────────────────────────────── */
+    #preloader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #000;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 20px;
+      transition: opacity .5s ease, visibility .5s ease;
+    }
+    #preloader.hide { opacity: 0; visibility: hidden; }
+    .preloader-logo {
+      width: 64px; height: 64px;
+      animation: preloaderPulse 1.5s ease-in-out infinite;
+    }
+    .preloader-ring {
+      width: 48px; height: 48px;
+      border: 2.5px solid rgba(255,255,255,0.1);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes preloaderPulse {
+      0%,100% { opacity: .7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+
+    /* ─── SCROLL PROGRESS ─────────────────────────────────────── */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 9998;
+      height: 2px; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      transition: width .1s;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    /* ─── ANIMATED BACKGROUND ─────────────────────────────────── */
+    #bg-canvas {
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none;
+      opacity: .55;
+    }
+
+    .noise-overlay {
+      position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+      background-size: 180px;
+      opacity: .4;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 max(24px, 5vw);
+      height: 52px;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background .3s;
+    }
+    nav.scrolled { background: rgba(0,0,0,0.88); }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none; color: var(--text);
+      font-size: 15px; font-weight: 600; letter-spacing: -.01em;
+    }
+    .nav-logo svg { color: var(--text); }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text2); text-decoration: none;
+      font-size: 13px; font-weight: 400;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-cta a {
+      color: var(--text2); text-decoration: none;
+      font-size: 13px; transition: color .2s;
+    }
+    .nav-cta a:hover { color: var(--text); }
+
+    .btn-nav {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 16px; border-radius: 100px;
+      background: var(--accent2);
+      color: #fff; text-decoration: none;
+      font-size: 12px; font-weight: 500;
+      transition: background .2s, box-shadow .2s;
+    }
+    .btn-nav:hover { background: #0077ed; box-shadow: 0 0 20px var(--glow2); }
+
+    /* hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 6px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--text); border-radius: 2px;
+      transition: all .3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed; inset: 0; top: 52px; z-index: 99;
+      background: rgba(0,0,0,0.96);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 36px;
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: all .3s ease;
+    }
+    .mobile-menu.open { opacity: 1; visibility: visible; transform: none; }
+    .mobile-menu a {
+      color: var(--text); text-decoration: none;
+      font-size: 22px; font-weight: 500;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .btn-primary-lg { font-size: 17px; }
+
+    /* ─── SECTIONS ─────────────────────────────────────────────── */
+    section { position: relative; z-index: 2; }
+
+    .container {
+      max-width: 960px; margin: 0 auto;
+      padding: 0 max(24px, 5vw);
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 24px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-inner { max-width: 720px; margin: 0 auto; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 100px;
+      background: rgba(41,151,255,.1);
+      border: 1px solid rgba(41,151,255,.25);
+      font-size: 12px; font-weight: 500; color: var(--accent3);
+      letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeInDown .8s ease .2s both;
+    }
+    .hero-eyebrow .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent3);
+      animation: blink 2s ease infinite;
+    }
+    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 20px;
+      animation: fadeInUp .9s ease .35s both;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 30%, var(--accent3) 80%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.2vw, 20px);
+      font-weight: 400; color: var(--text2);
+      line-height: 1.55; max-width: 520px; margin: 0 auto 36px;
+      animation: fadeInUp .9s ease .45s both;
+    }
+
+    .hero-actions {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 14px; margin-bottom: 60px;
+      animation: fadeInUp .9s ease .55s both;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 32px; border-radius: 100px;
+      background: var(--accent2);
+      color: #fff; text-decoration: none;
+      font-size: 17px; font-weight: 600;
+      transition: all .25s ease;
+      box-shadow: 0 0 0 0 var(--glow);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::before {
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 60%);
+      opacity: 0; transition: opacity .3s;
+    }
+    .btn-primary:hover { background: #0077ed; box-shadow: 0 0 40px var(--glow), 0 0 80px var(--glow2); transform: translateY(-1px); }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-primary-lg { font-size: 17px; }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 32px; border-radius: 100px;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      color: var(--text); text-decoration: none;
+      font-size: 17px; font-weight: 500;
+      backdrop-filter: blur(10px);
+      transition: all .25s ease;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.3); transform: translateY(-1px); }
+
+    .hero-perks {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px;
+      animation: fadeInUp .9s ease .65s both;
+    }
+    .perk {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 14px; color: var(--text2); font-weight: 400;
+    }
+    .perk-check {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(52,210,220,.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .perk-check svg { color: var(--accent3); }
+
+    /* ─── STATS ─────────────────────────────────────────────────── */
+    #stats {
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .stat {
+      padding: 40px 32px; text-align: center;
+      background: var(--bg);
+      transition: background .3s;
+    }
+    .stat:hover { background: var(--surface); }
+    .stat-num {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 800; letter-spacing: -.03em;
+      background: linear-gradient(135deg, var(--text) 40%, var(--accent3));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1;
+    }
+    .stat-label { font-size: 14px; color: var(--text2); margin-top: 8px; font-weight: 400; }
+
+    /* ─── SERVICES ────────────────────────────────────────────── */
+    #services { padding: 100px 0; }
+
+    .section-label {
+      font-size: 12px; font-weight: 600; color: var(--accent);
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-label::before {
+      content: ''; flex: none; width: 24px; height: 1.5px;
+      background: var(--accent); border-radius: 2px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 700; letter-spacing: -.03em;
+      line-height: 1.1; margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px; color: var(--text2); max-width: 480px; line-height: 1.6;
+    }
+
+    .section-head { margin-bottom: 60px; }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all .3s ease;
+      position: relative; overflow: hidden;
+      cursor: default;
+    }
+    .service-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .service-card:hover { border-color: rgba(41,151,255,.3); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 40px rgba(41,151,255,.08); }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-card.featured {
+      background: linear-gradient(145deg, rgba(0,113,227,.14), rgba(41,151,255,.06));
+      border-color: rgba(41,151,255,.25);
+    }
+    .service-card.featured:hover { border-color: rgba(41,151,255,.5); }
+
+    .featured-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 12px; border-radius: 100px;
+      background: rgba(41,151,255,.15); border: 1px solid rgba(41,151,255,.3);
+      font-size: 11px; font-weight: 600; color: var(--accent3);
+      letter-spacing: .07em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .service-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(41,151,255,.1); border: 1px solid rgba(41,151,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      transition: all .3s;
+    }
+    .service-card:hover .service-icon { background: rgba(41,151,255,.18); box-shadow: 0 0 20px rgba(41,151,255,.2); }
+
+    .service-name { font-size: 20px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.01em; }
+    .service-desc { font-size: 15px; color: var(--text2); line-height: 1.6; margin-bottom: 28px; }
+
+    .service-price {
+      display: flex; align-items: baseline; gap: 4px; margin-bottom: 28px;
+    }
+    .price-amount { font-size: 40px; font-weight: 800; letter-spacing: -.04em; }
+    .price-currency { font-size: 20px; font-weight: 600; color: var(--text2); }
+
+    .btn-service {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 100px;
+      background: var(--accent2); color: #fff; text-decoration: none;
+      font-size: 15px; font-weight: 500;
+      transition: all .25s;
+      position: relative; overflow: hidden;
+    }
+    .btn-service::after {
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .btn-service:hover { background: #0077ed; box-shadow: 0 0 30px var(--glow); transform: translateY(-1px); }
+    .btn-service:hover::after { opacity: 1; }
+
+    .service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .service-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text2); }
+    .service-features li svg { flex-shrink: 0; color: var(--accent3); }
+
+    /* ─── FAQ ──────────────────────────────────────────────────── */
+    #faq { padding: 100px 0; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 2px; }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color .3s;
+    }
+    .faq-item.open { border-color: rgba(41,151,255,.25); }
+
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 28px; cursor: pointer;
+      transition: background .2s;
+      user-select: none;
+    }
+    .faq-q:hover { background: var(--surface2); }
+    .faq-q-text { font-size: 16px; font-weight: 500; line-height: 1.4; flex: 1; padding-right: 20px; }
+
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,.06); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: all .3s ease;
+    }
+    .faq-item.open .faq-icon { background: rgba(41,151,255,.15); border-color: rgba(41,151,255,.3); transform: rotate(180deg); }
+    .faq-icon svg { transition: transform .3s; }
+
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s ease, padding .3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 400px; }
+    .faq-a-inner {
+      padding: 0 28px 22px;
+      font-size: 15px; color: var(--text2); line-height: 1.7;
+    }
+
+    /* ─── TERMS ─────────────────────────────────────────────────── */
+    #terms { padding: 80px 0; }
+
+    .terms-box {
+      background: linear-gradient(135deg, rgba(41,151,255,.06), rgba(0,0,0,.4));
+      border: 1px solid rgba(41,151,255,.2);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      display: flex; align-items: center; gap: 32px;
+      backdrop-filter: blur(12px);
+      flex-wrap: wrap;
+    }
+    .terms-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      background: rgba(41,151,255,.12); border: 1px solid rgba(41,151,255,.25);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .terms-content { flex: 1; min-width: 200px; }
+    .terms-content h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .terms-content p { font-size: 15px; color: var(--text2); line-height: 1.6; }
+    .btn-terms {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 100px;
+      background: var(--surface2); border: 1px solid var(--border2);
+      color: var(--text); text-decoration: none;
+      font-size: 15px; font-weight: 500; white-space: nowrap;
+      transition: all .25s;
+      backdrop-filter: blur(10px);
+    }
+    .btn-terms:hover { background: rgba(41,151,255,.12); border-color: rgba(41,151,255,.3); transform: translateY(-1px); }
+
+    /* ─── REVIEWS ────────────────────────────────────────────────── */
+    #reviews { padding: 100px 0; overflow: hidden; }
+    .reviews-marquee-wrap {
+      display: flex; flex-direction: column; gap: 16px;
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+    .reviews-track {
+      display: flex; gap: 16px; width: max-content;
+      animation: marquee-left 40s linear infinite;
+    }
+    .reviews-track.reverse {
+      animation: marquee-right 45s linear infinite;
+    }
+    .reviews-track:hover, .reviews-track.reverse:hover { animation-play-state: paused; }
+    @keyframes marquee-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .review-card {
+      flex-shrink: 0; width: 300px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 24px;
+      backdrop-filter: blur(12px);
+      transition: border-color .25s, transform .25s;
+    }
+    .review-card:hover { border-color: rgba(41,151,255,.25); transform: translateY(-2px); }
+    .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .review-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; font-weight: 700; flex-shrink: 0;
+      background: linear-gradient(135deg, #1c6ef3, #0a84ff);
+      color: #fff;
+    }
+    .review-meta { flex: 1; min-width: 0; }
+    .review-name { font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .review-date { font-size: 12px; color: var(--text3); margin-top: 2px; }
+    .review-stars { display: flex; gap: 2px; margin-bottom: 10px; }
+    .review-stars svg { color: #f5a623; }
+    .review-text { font-size: 14px; color: var(--text2); line-height: 1.6; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      position: relative; z-index: 2;
+      padding: 60px 0 32px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 40px; margin-bottom: 48px;
+    }
+    .footer-brand { max-width: 260px; }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+      font-size: 15px; font-weight: 700; color: var(--text); text-decoration: none;
+    }
+    .footer-brand p { font-size: 13px; color: var(--text3); line-height: 1.7; }
+
+    .footer-links h4 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 16px; letter-spacing: .04em; }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: var(--text3); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-social { display: flex; gap: 10px; margin-top: 4px; }
+    .social-btn {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text2); text-decoration: none;
+      transition: all .2s;
+    }
+    .social-btn:hover { background: rgba(41,151,255,.15); border-color: rgba(41,151,255,.3); color: var(--accent3); }
+
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+      padding-top: 28px; border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-bottom p { font-size: 12px; color: var(--text3); }
+
+    /* ─── BACK TO TOP ─────────────────────────────────────────── */
+    #back-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--text2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      opacity: 0; visibility: hidden; transform: translateY(12px);
+      transition: all .3s ease;
+      box-shadow: 0 4px 24px rgba(0,0,0,.4);
+    }
+    #back-top.show { opacity: 1; visibility: visible; transform: none; }
+    #back-top:hover { background: rgba(41,151,255,.2); border-color: rgba(41,151,255,.4); color: var(--text); transform: translateY(-3px); }
+
+    /* ─── ANIMATIONS ──────────────────────────────────────────── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    /* ─── DIVIDER ─────────────────────────────────────────────── */
+    .divider {
+      position: relative; z-index: 2;
+      height: 1px; background: var(--border);
+      margin: 0 max(24px, 5vw);
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat { padding: 28px 20px; }
+
+      .terms-box { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+
+      .footer-inner { flex-direction: column; gap: 28px; }
+
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; max-width: 300px; }
+
+      .faq-q-text { font-size: 14px; }
+      .faq-q { padding: 18px 20px; }
+      .faq-a-inner { padding: 0 20px 18px; }
+    }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 34px; }
+      .hero-sub { font-size: 15px; }
+      .service-card { padding: 28px 24px; }
+      .section-title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <svg class="preloader-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="80" height="80" rx="18" fill="#111"/>
+    <path d="M40 14C34.5 14 30.2 16.3 27.3 20.8C28.8 21.6 30.1 22.8 31 24.3C33 21.1 36.2 19.2 40 19.2C43.8 19.2 47 21.1 49 24.3C49.9 22.8 51.2 21.6 52.7 20.8C49.8 16.3 45.5 14 40 14Z" fill="white" opacity=".9"/>
+    <path d="M55 27C52 27 49.5 29.5 49.5 32.5C49.5 35.5 52 38 55 38C58 38 60.5 35.5 60.5 32.5C60.5 29.5 58 27 55 27Z" fill="white" opacity=".9"/>
+    <path d="M56.5 40.5C54.3 40.5 52.3 41.2 50.7 42.4C50.1 38.9 47 36.2 43.2 36.2H36.8C33 36.2 29.9 38.9 29.3 42.4C27.7 41.2 25.7 40.5 23.5 40.5C18.3 40.5 14 44.8 14 50C14 55.2 18.3 59.5 23.5 59.5H56.5C61.7 59.5 66 55.2 66 50C66 44.8 61.7 40.5 56.5 40.5Z" fill="white" opacity=".9"/>
+  </svg>
+  <div class="preloader-ring"></div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- ANIMATED BACKGROUND -->
+<canvas id="bg-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Dev Certificate
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#terms">Условия</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="https://t.me/kwozyxxshop21/2" target="_blank" rel="noopener">Отзывы</a>
+    <a href="https://t.me/qwormixxz" target="_blank" rel="noopener" class="btn-nav">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      Связаться
+    </a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" onclick="closeMobile()">Услуги</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#terms" onclick="closeMobile()">Условия</a>
+  <a href="https://t.me/kwozyxxshop21/2" target="_blank" rel="noopener" onclick="closeMobile()">Отзывы</a>
+  <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-primary btn-primary-lg" onclick="closeMobile()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    Купить сертификат
+  </a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="dot"></span> Официальный Apple Developer Certificate</div>
+    <h1 class="gradient-text">Apple Developer<br>Certificate</h1>
+    <p class="hero-sub">Подписывайте приложения на iPhone быстро, безопасно и без ограничений. Мгновенная выдача, полная поддержка.</p>
+    <div class="hero-actions">
+      <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-primary btn-primary-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Купить сертификат
+      </a>
+      <a href="https://t.me/qwormixxz" target="_blank" rel="noopener" class="btn-secondary">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Задать вопрос
+      </a>
+    </div>
+    <div class="hero-perks">
+      <div class="perk"><span class="perk-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Быстрая выдача</div>
+      <div class="perk"><span class="perk-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Полноценный сертификат</div>
+      <div class="perk"><span class="perk-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Гарантия 1 месяц</div>
+      <div class="perk"><span class="perk-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Стабильная работа</div>
+      <div class="perk"><span class="perk-check"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Поддержка 24/7</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-num" data-target="1200" data-suffix="+">0</div>
+        <div class="stat-label">Довольных клиентов</div>
+      </div>
+      <div class="stat reveal reveal-delay-1">
+        <div class="stat-num" data-target="30" data-suffix=" мин">0</div>
+        <div class="stat-label">Среднее время выдачи</div>
+      </div>
+      <div class="stat reveal reveal-delay-2">
+        <div class="stat-num" data-target="99" data-suffix="%">0</div>
+        <div class="stat-label">Успешных установок</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Наши услуги</div>
+      <h2 class="section-title">Выберите нужный пакет</h2>
+      <p class="section-sub">Всё для установки приложений на iPhone без App Store — быстро и надёжно.</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Card 1 -->
+      <div class="service-card featured reveal">
+        <div class="featured-badge">
+          <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor"><path d="M6 0l1.5 3.5L11 4.2l-2.5 2.4.6 3.4L6 8.4l-3.1 1.6.6-3.4L1 4.2l3.5-.7z"/></svg>
+          Популярное
+        </div>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-name">Apple Developer Certificate</div>
+        <div class="service-desc">Полноценный Apple Developer Certificate для подписи и установки приложений на вашем iPhone без ограничений.</div>
+        <ul class="service-features">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Подпись любых IPA-файлов</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Без джейлбрейка</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Работает на iOS 16–18</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Гарантия 30 дней</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-amount">529</span>
+          <span class="price-currency">₽</span>
+        </div>
+        <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-service">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Купить за 529 ₽
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="service-name">Каталог приложений</div>
+        <div class="service-desc">Большая коллекция проверенных приложений для iPhone. Скачивайте безопасно и устанавливайте без App Store.</div>
+        <ul class="service-features">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Сотни приложений</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Регулярные обновления</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Только проверенные IPA</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Быстрый доступ</li>
+        </ul>
+        <div class="service-price">
+          <span class="price-amount">100</span>
+          <span class="price-currency">₽</span>
+        </div>
+        <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-service">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Получить доступ
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Вопросы и ответы</div>
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <p class="section-sub">Всё, что нужно знать перед покупкой.</p>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Что такое Apple Developer Certificate?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Apple Developer Certificate — это официальный сертификат разработчика Apple, который позволяет подписывать приложения и устанавливать их на iPhone без App Store. Сертификат выдаётся через официальную программу Apple Developer.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Нужен ли джейлбрейк?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Нет! Наш сертификат работает на обычных iPhone без джейлбрейка. Совместим с iOS 16, 17 и 18. Устройство остаётся стандартным и полностью защищённым.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Как быстро я получу сертификат?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Как правило, сертификат выдаётся в течение 15–30 минут после оплаты. В большинстве случаев всё происходит автоматически через нашего Telegram-бота. Поддержка доступна 24/7.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Что такое гарантия 1 месяц?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Если в течение месяца сертификат перестанет работать по нашей вине, мы бесплатно выдадим новый. Гарантия не распространяется на случаи нарушения условий использования Apple Developer.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Какие приложения можно установить?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">С помощью сертификата можно подписать любой IPA-файл: эмуляторы, сторонние магазины приложений, модифицированные версии приложений и многое другое. Главное — не нарушать условия использования Apple.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">Как происходит оплата?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Оплата принимается через Telegram-бота @ioscertificat_bot. Поддерживаются банковские карты, СБП и другие удобные способы. После успешной оплаты сертификат выдаётся автоматически.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">На сколько устройств рассчитан сертификат?</span>
+          <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Один сертификат предназначен для использования на вашем iPhone. Подробности уточняйте у поддержки в Telegram.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head" style="text-align:center">
+      <div class="section-label">Отзывы</div>
+      <h2 class="section-title">Что говорят клиенты</h2>
+      <p class="section-sub">Сотни покупателей уже оценили качество и скорость нашего сервиса</p>
+    </div>
+  </div>
+
+  <div class="reviews-marquee-wrap">
+
+    <!-- ROW 1 — left -->
+    <div class="reviews-track" id="track1">
+      <!-- Card 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#1c6ef3,#0a84ff)">А</div>
+          <div class="review-meta"><div class="review-name">Алексей М.</div><div class="review-date">2 дня назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Взял сертификат на месяц — всё работает идеально. Установил AltStore без проблем, приложения держатся. Очень доволен, буду брать снова.</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#30b650,#34c759)">К</div>
+          <div class="review-meta"><div class="review-name">Кристина Л.</div><div class="review-date">3 дня назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Брала продление — выдали за 5 минут, никакого ожидания. Цена очень приятная, за такое качество это просто огонь 🔥</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#f5a623,#ff9500)">Д</div>
+          <div class="review-meta"><div class="review-name">Дмитрий К.</div><div class="review-date">4 дня назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Сертификат пришёл мгновенно после оплаты. Уже третий раз беру у этих ребят — никогда не подводили. Рекомендую всем!</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#af52de,#bf5af2)">М</div>
+          <div class="review-meta"><div class="review-name">Мария Р.</div><div class="review-date">5 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Быстро, удобно, надёжно. Попросила помощь с установкой — всё объяснили в боте. Подписи работают уже больше 3 недель без отзыва.</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff3b30,#ff453a)">С</div>
+          <div class="review-meta"><div class="review-name">Сергей П.</div><div class="review-date">1 неделю назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Беру уже полгода каждый месяц. Ни разу не было проблем — сертификат живёт весь срок. Лучший сервис из всех, что пробовал.</div>
+      </div>
+      <!-- Card 6 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#0e7de0,#32ade6)">И</div>
+          <div class="review-meta"><div class="review-name">Иван Т.</div><div class="review-date">1 неделю назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Взял 100₽ на пробу — понравилось. Потом взял полный на месяц. Скорость выдачи просто космос, всё работает как надо.</div>
+      </div>
+      <!-- Card 7 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#4cd964,#30b650)">Н</div>
+          <div class="review-meta"><div class="review-name">Надежда В.</div><div class="review-date">8 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Первый раз брала сертификат — немного боялась, но всё прошло гладко. Бот объяснил каждый шаг. Очень удобно и дёшево!</div>
+      </div>
+      <!-- Card 8 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#636366,#48484a)">Р</div>
+          <div class="review-meta"><div class="review-name">Роман Ш.</div><div class="review-date">9 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Пользуюсь уже год. Стабильно, без сюрпризов. Однажды был вопрос — ответили в течение часа. Доверяю этим ребятам полностью.</div>
+      </div>
+      <!-- Card 9 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a24)">О</div>
+          <div class="review-meta"><div class="review-name">Ольга С.</div><div class="review-date">10 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Муж посоветовал — теперь берём вдвоём каждый месяц. Экономим кучу денег по сравнению с другими способами. Топ!</div>
+      </div>
+      <!-- duplicate for infinite loop -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#1c6ef3,#0a84ff)">А</div>
+          <div class="review-meta"><div class="review-name">Алексей М.</div><div class="review-date">2 дня назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Взял сертификат на месяц — всё работает идеально. Установил AltStore без проблем, приложения держатся. Очень доволен, буду брать снова.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#30b650,#34c759)">К</div>
+          <div class="review-meta"><div class="review-name">Кристина Л.</div><div class="review-date">3 дня назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Брала продление — выдали за 5 минут, никакого ожидания. Цена очень приятная, за такое качество это просто огонь 🔥</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#f5a623,#ff9500)">Д</div>
+          <div class="review-meta"><div class="review-name">Дмитрий К.</div><div class="review-date">4 дня назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Сертификат пришёл мгновенно после оплаты. Уже третий раз беру у этих ребят — никогда не подводили. Рекомендую всем!</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#af52de,#bf5af2)">М</div>
+          <div class="review-meta"><div class="review-name">Мария Р.</div><div class="review-date">5 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Быстро, удобно, надёжно. Попросила помощь с установкой — всё объяснили в боте. Подписи работают уже больше 3 недель без отзыва.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff3b30,#ff453a)">С</div>
+          <div class="review-meta"><div class="review-name">Сергей П.</div><div class="review-date">1 неделю назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Беру уже полгода каждый месяц. Ни разу не было проблем — сертификат живёт весь срок. Лучший сервис из всех, что пробовал.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#0e7de0,#32ade6)">И</div>
+          <div class="review-meta"><div class="review-name">Иван Т.</div><div class="review-date">1 неделю назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Взял 100₽ на пробу — понравилось. Потом взял полный на месяц. Скорость выдачи просто космос, всё работает как надо.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#4cd964,#30b650)">Н</div>
+          <div class="review-meta"><div class="review-name">Надежда В.</div><div class="review-date">8 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Первый раз брала сертификат — немного боялась, но всё прошло гладко. Бот объяснил каждый шаг. Очень удобно и дёшево!</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#636366,#48484a)">Р</div>
+          <div class="review-meta"><div class="review-name">Роман Ш.</div><div class="review-date">9 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Пользуюсь уже год. Стабильно, без сюрпризов. Однажды был вопрос — ответили в течение часа. Доверяю этим ребятам полностью.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a24)">О</div>
+          <div class="review-meta"><div class="review-name">Ольга С.</div><div class="review-date">10 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Муж посоветовал — теперь берём вдвоём каждый месяц. Экономим кучу денег по сравнению с другими способами. Топ!</div>
+      </div>
+    </div>
+
+    <!-- ROW 2 — right -->
+    <div class="reviews-track reverse" id="track2">
+      <!-- Card 1 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#5e5ce6,#6e6ded)">В</div>
+          <div class="review-meta"><div class="review-name">Виктор Г.</div><div class="review-date">11 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Гениально — заплатил 529₽ и забыл о проблемах на месяц. Отзыва не было ни разу. Это лучшее вложение для айфона.</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff9f0a,#ffcc02)">Т</div>
+          <div class="review-meta"><div class="review-name">Татьяна Ж.</div><div class="review-date">12 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Покупала для сына — всё установила сама по инструкции в боте. Даже я разобралась, хотя не сильна в технике 😄</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#00c7be,#30b0c7)">Е</div>
+          <div class="review-meta"><div class="review-name">Евгений Н.</div><div class="review-date">2 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Брал сертификат 3 раза подряд — всегда мгновенная выдача. Надёжнее чем у конкурентов, и дешевле. Моя оценка 10/10.</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#1c6ef3,#0a84ff)">П</div>
+          <div class="review-meta"><div class="review-name">Павел Д.</div><div class="review-date">2 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Скорость реакции бота удивила. Заплатил — через 2 минуты уже подписывал приложения. Спасибо за такой сервис!</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff375f,#ff2d55)">А</div>
+          <div class="review-meta"><div class="review-name">Анастасия К.</div><div class="review-date">15 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Подруга посоветовала — не пожалела. Сертификат работает стабильно, приложения не вылетают. Буду продлевать каждый месяц.</div>
+      </div>
+      <!-- Card 6 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#30b650,#34c759)">Г</div>
+          <div class="review-meta"><div class="review-name">Григорий Л.</div><div class="review-date">17 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Честный сервис — что обещали, то и получил. Продление заняло меньше минуты. Таких продавцов мало, держитесь!</div>
+      </div>
+      <!-- Card 7 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#af52de,#bf5af2)">Ю</div>
+          <div class="review-meta"><div class="review-name">Юлия Ф.</div><div class="review-date">18 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Беру уже 4 месяца. Всё чётко, по-честному. Один раз была заминка — решили за 20 минут. Поддержка на высоте!</div>
+      </div>
+      <!-- Card 8 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#636366,#48484a)">Н</div>
+          <div class="review-meta"><div class="review-name">Никита В.</div><div class="review-date">19 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Купил на пробу за 100₽ — работает отлично. Сразу взял на месяц. Цена-качество просто идеальное соотношение.</div>
+      </div>
+      <!-- Card 9 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff9f0a,#ff6b00)">З</div>
+          <div class="review-meta"><div class="review-name">Захар О.</div><div class="review-date">3 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Уже 8 месяцев беру сертификат тут. Надёжно и стабильно — ни разу не было досрочного отзыва. Лучший вариант на рынке!</div>
+      </div>
+      <!-- Card 10 -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#00c7be,#5ac8fa)">В</div>
+          <div class="review-meta"><div class="review-name">Валерия М.</div><div class="review-date">3 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Всё супер! Оплатила — бот сразу всё прислал. Инструкция понятная, установила за 10 минут. Рекомендую девочкам 💙</div>
+      </div>
+      <!-- duplicates for loop -->
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#5e5ce6,#6e6ded)">В</div>
+          <div class="review-meta"><div class="review-name">Виктор Г.</div><div class="review-date">11 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Гениально — заплатил 529₽ и забыл о проблемах на месяц. Отзыва не было ни разу. Это лучшее вложение для айфона.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff9f0a,#ffcc02)">Т</div>
+          <div class="review-meta"><div class="review-name">Татьяна Ж.</div><div class="review-date">12 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Покупала для сына — всё установила сама по инструкции в боте. Даже я разобралась, хотя не сильна в технике 😄</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#00c7be,#30b0c7)">Е</div>
+          <div class="review-meta"><div class="review-name">Евгений Н.</div><div class="review-date">2 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Брал сертификат 3 раза подряд — всегда мгновенная выдача. Надёжнее чем у конкурентов, и дешевле. Моя оценка 10/10.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#1c6ef3,#0a84ff)">П</div>
+          <div class="review-meta"><div class="review-name">Павел Д.</div><div class="review-date">2 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Скорость реакции бота удивила. Заплатил — через 2 минуты уже подписывал приложения. Спасибо за такой сервис!</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff375f,#ff2d55)">А</div>
+          <div class="review-meta"><div class="review-name">Анастасия К.</div><div class="review-date">15 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Подруга посоветовала — не пожалела. Сертификат работает стабильно, приложения не вылетают. Буду продлевать каждый месяц.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#30b650,#34c759)">Г</div>
+          <div class="review-meta"><div class="review-name">Григорий Л.</div><div class="review-date">17 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Честный сервис — что обещали, то и получил. Продление заняло меньше минуты. Таких продавцов мало, держитесь!</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#af52de,#bf5af2)">Ю</div>
+          <div class="review-meta"><div class="review-name">Юлия Ф.</div><div class="review-date">18 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Беру уже 4 месяца. Всё чётко, по-честному. Один раз была заминка — решили за 20 минут. Поддержка на высоте!</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#636366,#48484a)">Н</div>
+          <div class="review-meta"><div class="review-name">Никита В.</div><div class="review-date">19 дней назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Купил на пробу за 100₽ — работает отлично. Сразу взял на месяц. Цена-качество просто идеальное соотношение.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ff9f0a,#ff6b00)">З</div>
+          <div class="review-meta"><div class="review-name">Захар О.</div><div class="review-date">3 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Уже 8 месяцев беру сертификат тут. Надёжно и стабильно — ни разу не было досрочного отзыва. Лучший вариант на рынке!</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#00c7be,#5ac8fa)">В</div>
+          <div class="review-meta"><div class="review-name">Валерия М.</div><div class="review-date">3 недели назад</div></div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">Всё супер! Оплатила — бот сразу всё прислал. Инструкция понятная, установила за 10 минут. Рекомендую девочкам 💙</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms">
+  <div class="container">
+    <div class="terms-box reveal">
+      <div class="terms-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="terms-content">
+        <h3>Условия использования Apple Developer</h3>
+        <p>Перед покупкой обязательно ознакомьтесь с условиями использования Apple Developer. Нарушение правил может привести к отзыву сертификата.</p>
+      </div>
+      <a href="https://docs.google.com/document/d/119D6cToUEH0Qd9UzIt7RI-qC6k1RPCXISRp7DKrssuk/edit?usp=drivesdk" target="_blank" rel="noopener" class="btn-terms">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Читать условия
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Dev Certificate
+        </a>
+        <p>Надёжные Apple Developer Certificates для установки приложений на iPhone без App Store.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#terms">Условия</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Telegram</h4>
+        <ul>
+          <li><a href="https://t.me/kwozyxxshop21" target="_blank" rel="noopener">Канал</a></li>
+          <li><a href="https://t.me/kwozyxxshop21/2" target="_blank" rel="noopener">Отзывы</a></li>
+          <li><a href="https://t.me/qwormixxz" target="_blank" rel="noopener">Связаться</a></li>
+          <li><a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener">Купить сертификат</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Соцсети</h4>
+        <div class="footer-social">
+          <a href="https://t.me/kwozyxxshop21" target="_blank" rel="noopener" class="social-btn" aria-label="Telegram канал">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="https://t.me/qwormixxz" target="_blank" rel="noopener" class="social-btn" aria-label="Написать нам">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Apple Developer Certificate Shop. Все права защищены.</p>
+      <p>Не аффилировано с Apple Inc.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// ─── PRELOADER ─────────────────────────────────────────────
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('preloader').classList.add('hide');
+  }, 800);
+});
+
+// ─── ANIMATED BACKGROUND (particles) ───────────────────────
+(function() {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], animId;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function mkParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.6 + 0.4,
+      vx: (Math.random() - .5) * .18,
+      vy: (Math.random() - .5) * .18,
+      alpha: Math.random() * .55 + .08,
+      hue: Math.random() < .6 ? 210 : (Math.random() < .5 ? 190 : 230)
+    };
+  }
+
+  for (let i = 0; i < 90; i++) particles.push(mkParticle());
+
+  // gradient blobs
+  const blobs = [
+    { x: .2, y: .15, r: .38, c: 'rgba(0,113,227,' },
+    { x: .8, y: .7, r: .32, c: 'rgba(52,170,220,' },
+    { x: .5, y: .5, r: .28, c: 'rgba(0,65,170,' },
+  ];
+
+  let tick = 0;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    tick += .003;
+
+    // blobs
+    blobs.forEach((b, i) => {
+      const bx = (b.x + Math.sin(tick + i * 1.7) * .08) * W;
+      const by = (b.y + Math.cos(tick + i * 2.3) * .06) * H;
+      const grad = ctx.createRadialGradient(bx, by, 0, bx, by, b.r * Math.min(W, H));
+      grad.addColorStop(0, b.c + '0.08)');
+      grad.addColorStop(1, b.c + '0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(bx, by, b.r * Math.min(W, H), 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // particles
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -10) p.x = W + 10;
+      if (p.x > W + 10) p.x = -10;
+      if (p.y < -10) p.y = H + 10;
+      if (p.y > H + 10) p.y = -10;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${p.hue},80%,70%,${p.alpha})`;
+      ctx.fill();
+    });
+
+    animId = requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ─── SCROLL PROGRESS ───────────────────────────────────────
+const scrollBar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  scrollBar.style.width = (window.scrollY / total * 100) + '%';
+}, { passive: true });
+
+// ─── NAV SCROLL ─────────────────────────────────────────────
+const navEl = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ─── BACK TO TOP ─────────────────────────────────────────────
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('show', window.scrollY > 500);
+}, { passive: true });
+
+// ─── MOBILE MENU ─────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+
+function closeMobile() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ─── SCROLL REVEAL ─────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ─── COUNTERS ──────────────────────────────────────────────
+function animCount(el, target, suffix, duration) {
+  let start = null;
+  function step(ts) {
+    if (!start) start = ts;
+    const prog = Math.min((ts - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - prog, 3);
+    el.textContent = Math.round(ease * target) + suffix;
+    if (prog < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.counted) {
+      e.target.dataset.counted = '1';
+      const target = +e.target.dataset.target;
+      const suffix = e.target.dataset.suffix || '';
+      animCount(e.target, target, suffix, 1800);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+// ─── FAQ ───────────────────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
