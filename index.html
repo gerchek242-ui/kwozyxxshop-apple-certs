@@ -497,6 +497,39 @@
     }
     .btn-terms:hover { background: rgba(41,151,255,.12); border-color: rgba(41,151,255,.3); transform: translateY(-1px); }
 
+    /* ─── OWNER BANNER ───────────────────────────────────────────── */
+    #owner-banner { padding: 40px 0; }
+    .owner-banner-box {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+      background: linear-gradient(135deg, rgba(41,151,255,.08) 0%, rgba(41,151,255,.03) 100%);
+      border: 1px solid rgba(41,151,255,.2);
+      border-radius: 24px; padding: 32px 40px;
+      backdrop-filter: blur(12px);
+    }
+    .owner-banner-left { display: flex; align-items: center; gap: 18px; }
+    .owner-banner-icon {
+      width: 52px; height: 52px; border-radius: 16px; flex-shrink: 0;
+      background: rgba(255,69,58,.12); border: 1px solid rgba(255,69,58,.25);
+      display: flex; align-items: center; justify-content: center;
+      color: #ff453a; font-size: 22px;
+    }
+    .owner-banner-text h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .owner-banner-text p { font-size: 14px; color: var(--text2); line-height: 1.5; }
+    .btn-owner {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 100px;
+      background: rgba(41,151,255,.12); border: 1px solid rgba(41,151,255,.3);
+      color: var(--accent); text-decoration: none;
+      font-size: 15px; font-weight: 600; white-space: nowrap;
+      transition: all .25s;
+    }
+    .btn-owner:hover { background: rgba(41,151,255,.2); border-color: rgba(41,151,255,.5); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(41,151,255,.15); }
+    @media(max-width:600px){
+      .owner-banner-box { padding: 24px 20px; }
+      .owner-banner-left { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
     /* ─── REVIEWS ────────────────────────────────────────────────── */
     #reviews { padding: 100px 0; overflow: hidden; }
     .reviews-marquee-wrap {
@@ -687,7 +720,7 @@
   </ul>
   <div class="nav-cta">
     <a href="https://t.me/kwozyxxshop21/2" target="_blank" rel="noopener">Отзывы</a>
-    <a href="https://t.me/qwormixxz" target="_blank" rel="noopener" class="btn-nav">
+    <a href="https://t.me/nuluva" target="_blank" rel="noopener" class="btn-nav">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
       Связаться
     </a>
@@ -703,7 +736,7 @@
   <a href="#faq" onclick="closeMobile()">FAQ</a>
   <a href="#terms" onclick="closeMobile()">Условия</a>
   <a href="https://t.me/kwozyxxshop21/2" target="_blank" rel="noopener" onclick="closeMobile()">Отзывы</a>
-  <a href="https://t.me/kwozyxxshopapplecert_bot" target="_blank" rel="noopener" class="btn-primary btn-primary-lg" onclick="closeMobile()">
+  <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-primary btn-primary-lg" onclick="closeMobile()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
     Купить сертификат
   </a>
@@ -716,11 +749,11 @@
     <h1 class="gradient-text">Apple Developer<br>Certificate</h1>
     <p class="hero-sub">Подписывайте приложения на iPhone быстро, безопасно и без ограничений. Мгновенная выдача, полная поддержка.</p>
     <div class="hero-actions">
-      <a href="https://t.me/kwozyxxshopapplecert_bot" target="_blank" rel="noopener" class="btn-primary btn-primary-lg">
+      <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-primary btn-primary-lg">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         Купить сертификат
       </a>
-      <a href="https://t.me/qwormixxz" target="_blank" rel="noopener" class="btn-secondary">
+      <a href="https://t.me/nuluva" target="_blank" rel="noopener" class="btn-secondary">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         Задать вопрос
       </a>
@@ -786,7 +819,7 @@
           <span class="price-amount">529</span>
           <span class="price-currency">₽</span>
         </div>
-        <a href="https://t.me/kwozyxxshopapplecert_bot" target="_blank" rel="noopener" class="btn-service">
+        <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-service">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           Купить за 529 ₽
         </a>
@@ -809,12 +842,31 @@
           <span class="price-amount">100</span>
           <span class="price-currency">₽</span>
         </div>
-        <a href="https://t.me/kwozyxxshopapplecert_bot" target="_blank" rel="noopener" class="btn-service">
+        <a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener" class="btn-service">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           Получить доступ
         </a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- OWNER BANNER -->
+<section id="owner-banner">
+  <div class="container">
+    <div class="owner-banner-box reveal">
+      <div class="owner-banner-left">
+        <div class="owner-banner-icon">⚠️</div>
+        <div class="owner-banner-text">
+          <h3>Если бот не работает — напишите владельцу</h3>
+          <p>Технические проблемы? Бот недоступен? Владелец поможет вам лично и оформит покупку напрямую.</p>
+        </div>
+      </div>
+      <a href="https://t.me/nuluva" target="_blank" rel="noopener" class="btn-owner">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Написать владельцу
+      </a>
     </div>
   </div>
 </section>
@@ -874,7 +926,7 @@
           <span class="faq-q-text">Как происходит оплата?</span>
           <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">Оплата принимается через Telegram-бота @kwozyxxshopapplecert_bot. Поддерживаются банковские карты, СБП и другие удобные способы. После успешной оплаты сертификат выдаётся автоматически.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Оплата принимается через Telegram-бота @ioscertificat_bot. Поддерживаются банковские карты, СБП и другие удобные способы. После успешной оплаты сертификат выдаётся автоматически.</div></div>
       </div>
 
       <div class="faq-item">
@@ -1280,8 +1332,8 @@
         <ul>
           <li><a href="https://t.me/kwozyxxshop21" target="_blank" rel="noopener">Канал</a></li>
           <li><a href="https://t.me/kwozyxxshop21/2" target="_blank" rel="noopener">Отзывы</a></li>
-          <li><a href="https://t.me/qwormixxz" target="_blank" rel="noopener">Связаться</a></li>
-          <li><a href="https://t.me/kwozyxxshopapplecert_bot" target="_blank" rel="noopener">Купить сертификат</a></li>
+          <li><a href="https://t.me/nuluva" target="_blank" rel="noopener">Связаться</a></li>
+          <li><a href="https://t.me/ioscertificat_bot" target="_blank" rel="noopener">Купить сертификат</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -1290,7 +1342,7 @@
           <a href="https://t.me/kwozyxxshop21" target="_blank" rel="noopener" class="social-btn" aria-label="Telegram канал">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
           </a>
-          <a href="https://t.me/qwormixxz" target="_blank" rel="noopener" class="social-btn" aria-label="Написать нам">
+          <a href="https://t.me/nuluva" target="_blank" rel="noopener" class="social-btn" aria-label="Написать нам">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </a>
         </div>
